@@ -8,7 +8,7 @@ const LegislationTracker = () => {
   useEffect(() => {
     const fetchBills = async () => {
       try {
-        const res = await fetch(`https://og-be-1.onrender.com/api/legislation?search=${search}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/legislation?search=${search}`);
         const data = await res.json();
         setBills(data);
       } catch (err) {

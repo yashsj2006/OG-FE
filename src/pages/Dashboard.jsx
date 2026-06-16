@@ -11,9 +11,9 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const [budgetRes, legRes, newsRes] = await Promise.all([
-          fetch('https://og-be-1.onrender.com/api/budget'),
-          fetch('https://og-be-1.onrender.com/api/legislation'),
-          fetch('https://og-be-1.onrender.com/api/news')
+          fetch(`${import.meta.env.VITE_API_URL}/api/budget`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/legislation`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/news`)
         ]);
         const budgetData = await budgetRes.json();
         const legData = await legRes.json();

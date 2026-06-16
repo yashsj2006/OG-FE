@@ -7,7 +7,7 @@ const BudgetTracker = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://og-be-1.onrender.com/api/budget')
+    fetch(`${import.meta.env.VITE_API_URL}/api/budget`)
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.error(err));
